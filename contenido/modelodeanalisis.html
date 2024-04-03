@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Métricas en el Desarrollo de Software</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <p class="logo">MÉTRICAS EN EL DESARROLLO DE SOFTWARE</p>
+            <ul>
+                <li><a href="./contenido/métricasycalidad.html">Métricas y Calidad</a><img class="img" src="./iconos/book-solid.svg" alt=""></li>
+                <li><a href="./contenido/modelodeanalisis.html">Modelo de Análisis</a><img class="img" src="./iconos/gears-solid.svg" alt=""></li>
+                <li><a href="./contenido/modelodeldiseño.html">Modelo del Diseño</a><img class="img" src="./iconos/bombilla.png" alt=""></li>
+                <li><a href="./contenido/codigofuente.html">Código Fuente</a><img class="img" src="./iconos/check-solid.svg" alt=""></li>
+            </ul>
+        </nav>
+        <header>
+            <h1>MÉTRICAS DEL MODELO DE ANÁLISIS</h1>
+                <p>
+                    En esta fase se obtendrán los requisitos y se establecerá el fundamento para el diseño. Y es por eso que se desea una visión interna a la calidad del modelo de análisis. 
+                    Sin embargo hay pocas métricas de análisis y especificación, se sabe que es posible adaptar métricas obtenidas para la aplicación de un proyecto, en donde las métricas examinan 
+                    el modelo de análisis con el fin de predecir el tamaño del sistema resultante, en donde resulte probable que el tamaño y la complejidad del diseño estén directamente relacionadas. <br><br>
+                    Es por eso que se verán en las siguientes secciones las métricas orientadas a la función, la métrica bang y las métricas de la calidad de especificación.
+                </p>
+            <h2>MÉTRICAS BASADAS EN LA FUNCIÓN</h2>
+                <p>
+                    La métrica de punto de función (PF) se puede usar como medio para predecir el tamaño de un sistema que se va a obtener de un modelo de análisis. Para instruir el empleo de la métrica PF, se considerará una sencilla
+                    representación del modelo de análisis mostrada por Pressman, en donde se representa un diagrama de flujo de datos, de una función de una aplicación de software llamada Hogar Seguro. La función administra la interacción
+                    con el usurario, aceptando una contraseña de usuario para activar/ desactivar el sistema y permitiendo consultas sobre el estado de las zonas de seguridad y varios censores de seguridad. La función muestra una serie de mensajes de
+                    petición y envía señales apropiadas de control a varios componentes del sistema de seguridad.<br><br>
+                    El diagrama de flujo de datos se evalúa para determinar las medidas clave necesarias para el cálculo de al métrica de PF:<br><br>
+                    - número de entradas de usuario<br>
+                    - número de salidas de usuario<br>
+                    - número de consultas del usuario<br>
+                    - número de archivos<br>
+                    - número de interfaces externas<br>
+                    <img class="img3" src="../img/imagen4.png" alt=""><br><br>
+                    Hay tres entradas del usuario: <b>contraseña, interruptor de emergencias</b> y <b>activar/desactivar</b> aparecen en la figura con dos consultas: <b>consulta de zona</b> y <b>consulta de sensor. </b><br>
+                    Se muestra un archivo <b>(archivo de configuración del sistema).</b> <br><br>
+                    También están presentes dos salidas de usuarios(mensajes y estado de del sensor) y cuatro interfaces externas (sensor de prueba, configuración de zona, activar/desactivar y alerta de alarma).<br><br>
+                    <img class="img3" src="../img/imagen5.png" alt=""><br><br>
+                <h2>LA MÉTRICA BANG</h2>
+                    <p>
+                        Puede emplearse para desarrollar una indicación del tamaño del software a implementar como consecuencia del modelo de análisis. Desarrollada por Tom DeMarco [Ejiogo ‘91], la métrica bang es “ una indicación, independiente de la
+                        implementación, del tamaño del sistema” [Ejiogo ‘91]. Para calcular la métrica bang, el desarrollador de software debe evaluar primero un conjunto de primitivas (elementos del modelo de análisis que no se subdividen más en el nivel de análisis)<br><br>
+                        Las primitivas se determinan evaluando el modelo de análisis y desarrollando cuentas para los siguientes elementos:<br><br>
+                    </p>
+                    <h3>PRIMITIVAS FUNCIONALES (Pfu):</h3>
+                        <p>
+                            Transformaciones (burbujas) que aparecen en el nivel inferior de un diagrama de flujo de datos.
+                        </p>
+                    <h3>ELEMENTOS DE DATOS (ED):</h3>
+                        <p>
+                            Los atributos de un objeto de datos, los elementos de datos no compuestos y aparecen en el diccionario de datos.
+                        </p>
+                    <h3>OBJETOS (OB):</h3>
+                        <p>
+                            Objetos de datos.
+                        </p>
+                    <h3>RELACIONES (RE):</h3>
+                        <p>
+                            Las conexiones entre objetos de datos.
+                        </p>
+                    <h3>TRANSICIONES (TR):</h3>
+                        <p>
+                            El número de transacciones de estado en el diagrama de transición de estado.<br><br>
+                            Además de las seis primitivas nombradas arriba, se determinan medidas adicionales para:<br><br>
+                        </p>
+                    <h3>PRIMITIVAS MODIFICADAS DE FUNCIÓN MANUAL (PMFu):</h3>
+                        <p>
+                            Funciones que caen fuera del límite del sistema y que deben modificarse para acomodarse al nuevo sistema.
+                        </p>
+                    <h3>ELEMENTOS DE DATOS DE ENTRADA (EDE):</h3>
+                        <p>
+                            Aquellos elementos de datos que se introducen en el sistema.
+                        </p>
+                    <h3>ELEMENTOS DE DATOS DE SALIDA (EDS):</h3>
+                        <p>
+                            Aquellos elementos de datos que se sacan en el sistema.
+                        </p>
+                    <h3>ELEMENTOS DE DATOS RETENIDOS (EDR):</h3>
+                        <p>
+                            Aquellos elementos de datos que son retenidos (almacenados) por el sistema.
+                        </p>
+                    <h3>MUESTRAS (TOKENS) DE DATOS (TCi):</h3>
+                        <p>
+                            Las muestras de datos (elementos de datos que no se subdividen dentro de una primitiva funcional) que existen en el l’imite de la i-ésima primitiva funcional (evaluada para cada primitiva).
+                        </p>
+                    <h3>CONEXIONES DE RELACIÓN (Rei):</h3>
+                        <p>
+                            Las relaciones que conectan el i-ésimo objeto en el modelo de datos con otros objetos.
+                        </p>
+            <h2>MÉTRICAS DE LA CALIDAD DE ESPECIFICACIÓN</h2>
+                <p>
+                    Existe una lista de características para poder valorar la calidad del modelo de análisis y la correspondiente especificación de requisitos: Especificidad, corrección, compleción, comprensión, capacidad de verificación, consistencia
+                    externa e interna, capacidad de logro, concisión, traza habilidad, capacidad de modificación, exactitud y capacidad de reutilización. Aunque muchas de las características anteriores pueden ser de naturaleza cuantitativa, Davis [Pressman ‘98] 
+                    sugiere que todas puedan representarse usando una o más métricas. Por ejemplo asumimos que hay ni requisitos en una especificación, tal como
+                    
+
+
